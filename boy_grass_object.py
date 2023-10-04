@@ -41,11 +41,19 @@ class Ball:
     def update(self):
         self.y -= 3 * self.speed
 
+        if self.type == 1 and self.y <= 50 + 12:
+            self.speed = 0
+            self. y = 50 + 12
+        elif self.type == 2 and self.y <= 50 + 22:
+            self.speed = 0
+            self.y = 50 + 22
+
+
     def draw(self):
         if self.type == 1:
-            self.image.draw(self.x, self.y,43, 43)
+            self.image.draw(self.x, self.y,24, 24)
         else:
-            self.image.draw(self.x, self.y,23, 23)
+            self.image.draw(self.x, self.y,44, 44)
 
 
 def handle_events():
